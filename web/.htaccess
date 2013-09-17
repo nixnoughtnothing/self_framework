@@ -1,0 +1,8 @@
+# ここでは指定されたファイルが存在する場合はそのファイルを読み込み、存在しなければ、
+# どんなURLであろうとすべてindex.phpにアクセスするということを行っています。
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ~(.*)$ index.php [QSA,L]
+</IfModule>
